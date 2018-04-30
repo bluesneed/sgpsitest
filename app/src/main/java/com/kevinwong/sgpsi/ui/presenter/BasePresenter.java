@@ -1,25 +1,26 @@
-package com.huang.huangtest.UI.Presenter;
+package com.kevinwong.sgpsi.ui.presenter;
 
 import android.content.Context;
 
-import com.huang.huangtest.UI.IView.IBaseView;
+import com.kevinwong.sgpsi.ui.iview.IBaseView;
+
+import java.lang.ref.WeakReference;
 
 /**
- * Created by JiawenHuang on 6/12/17.
+ *
  */
 
 public abstract class BasePresenter<T extends IBaseView> {
 
 
-    private T view;
+    private WeakReference<T> view;
 
     private Context context;
 
 
     public BasePresenter(T view, Context context) {
         this.context = context;
-        this.view = view;
-        initApiServices();
+        this.view = new WeakReference<>(view);
     }
 
     public Context getContext() {
@@ -27,10 +28,8 @@ public abstract class BasePresenter<T extends IBaseView> {
     }
 
     public T getView() {
-        return view;
+        return view != null ? view.get() : null;
     }
-
-    public abstract void initApiServices();
 
     public abstract void start();
 

@@ -13,9 +13,7 @@ public class PSIResponse {
     @SerializedName("region_metadata")
     @Expose
     private List<RegionMetadatum> regionMetadata = null;
-    @SerializedName("items")
-    @Expose
-    private List<Item> items = null;
+
     @SerializedName("api_info")
     @Expose
     private ApiInfo apiInfo;
@@ -26,14 +24,6 @@ public class PSIResponse {
 
     public void setRegionMetadata(List<RegionMetadatum> regionMetadata) {
         this.regionMetadata = regionMetadata;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
     }
 
     public ApiInfo getApiInfo() {

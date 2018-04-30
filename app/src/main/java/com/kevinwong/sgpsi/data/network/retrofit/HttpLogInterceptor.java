@@ -1,4 +1,4 @@
-package com.huang.huangtest.Data.Network;
+package com.kevinwong.sgpsi.data.network.retrofit;
 
 import android.util.Log;
 
@@ -11,9 +11,6 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
 
-/**
- * Created by JiawenHuang on 7/6/17.
- */
 
 public class HttpLogInterceptor implements Interceptor {
 

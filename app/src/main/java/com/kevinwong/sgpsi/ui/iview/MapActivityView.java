@@ -1,9 +1,9 @@
 package com.kevinwong.sgpsi.ui.iview;
 
-/**
- * Created by JiawenHuang on 17/4/18.
- */
 
-interface SGPSIView extends IBaseView {
-    public void onPSIInfoLoaded();
+import com.kevinwong.sgpsi.model.PSIResponse;
+
+public interface MapActivityView extends IBaseView {
+     void onPSIInfoLoadSuccess(PSIResponse psiResponse);
+     void onPSIInfoLoadError(String resaon);
 }
